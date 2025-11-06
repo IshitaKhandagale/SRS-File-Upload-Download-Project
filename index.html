@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+     <header>
+        <h1>📁 File Upload & Download System</h1>
+        <p>Upload, manage, and download your files easily!</p>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h2>Upload a File</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" required>
+                <button type="submit">Upload</button>
+            </form>
+             <section class="download-section">
+            <h2>Available Files</h2>
+            <ul id="fileList">
+                <li>No files uploaded yet...</li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
