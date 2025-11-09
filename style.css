@@ -43,3 +43,13 @@
   background-color: #f1f1f1;
   transform: scale(1.05);
 }
+
+.welcome-container {
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+}
