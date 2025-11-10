@@ -53,3 +53,9 @@
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(6px);
 }
+
+.startingpage-container{
+  text-align:center;
+  color:red;
+  background-color:Cyan;
+}
