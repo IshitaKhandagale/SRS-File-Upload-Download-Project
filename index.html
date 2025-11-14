@@ -3,44 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | File Upload & Download System</title>
+  <title>Welcome | File Upload & Download System</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home-page">
+<body class="welcome-page">
+  <div class="welcome-container">
+    <h1>Welcome to Your File Management System</h1>
+    <p>Upload, store, and download your files securely in just a few clicks.</p>
+    <button onclick="window.location.href='home.html'">Get Started</button>
 
-  <header class="header">
-    <h1>📁 File Upload & Download System</h1>
-    <p>Manage your files easily — upload, view, and download in seconds.</p>
-  </header>
 
-  <main class="main-container">
-    <section class="upload-section">
-      <h2>Upload Your File</h2>
-      <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="fileInput" name="file" required>
-        <button type="submit">Upload</button>
-      </form>
-    </section>
-
-    <section class="file-list">
-      <h2>Uploaded Files</h2>
-      <table id="filesTable">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Filename</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 File Management System | Designed by Ishita Khandagale</p>
-  </footer>
-
-  <script src="script.js"></script>
+  </div>
 </body>
 </html>
