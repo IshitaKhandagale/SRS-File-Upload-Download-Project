@@ -1,0 +1,50 @@
+/* style.css - modern simple UI */
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #5b6cff;
+  --accent-2: #7ea6ff;
+  --muted: #6b7280;
+  --danger: #e74c3c;
+  --glass: rgba(255,255,255,0.85);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter, system-ui, Arial; background: linear-gradient(180deg,#e9f0ff,#fefefe);
+  color:#111;
+}
+
+/* topbar */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:var(--card);box-shadow:0 2px 8px rgba(20,20,50,0.05)
+}
+.brand{font-weight:700}
+.user{color:var(--muted)}
+.btn{border:none;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid #eee}
+.btn.primary{background:var(--accent)}
+.btn.danger{background:var(--danger);color:#fff}
+
+/* centered welcome card */
+.centered-card{max-width:720px;margin:60px auto;padding:28px;background:var(--card);border-radius:14px;box-shadow:0 10px 30px rgba(30,40,90,0.06);text-align:center}
+.actions{margin:18px 0;display:flex;gap:12px;justify-content:center}
+.muted{color:var(--muted);margin-top:6px}
+.small{font-size:13px;color:var(--muted)}
+
+/* grid */
+.container-grid{max-width:1000px;margin:28px auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:0 18px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 18px rgba(40,50,90,0.04)}
+.card.small{max-width:540px;margin:60px auto;padding:20px;border-radius:12px}
+
+/* file list */
+.file-list{display:flex;flex-direction:column;gap:10px}
+.file-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;border:1px solid #f0f3ff}
+.file-meta{display:flex;flex-direction:column}
+.file-name{font-weight:600}
+.file-actions{display:flex;gap:8px;align-items:center}
+
+.row{display:flex;gap:10px;align-items:center;margin-top:12px}
+.spacer{height:12px}
+.note{margin-top:18px;text-align:left}
+.screenshot-path{background:#f7f9ff;padding:8px;border-radius:8px;margin-top:6px;color:#333;font-size:13px}
