@@ -9,8 +9,8 @@ const app = express();
 // ----- middleware -----
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // for form POST
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public"))); // serve HTML/CSS/JS
 
 const USERS_DB = path.join(__dirname, "users.json");
 
@@ -56,17 +56,15 @@ app.post("/login", (req, res) => {
   }
 
   console.log("User logged in:", username);
-  // (no sessions for simplicity) redirect to welcome page
   res.redirect("/welcome.html");
 });
 
-// -------- FILE UPLOAD ROUTES --------
+// -------- FILE UPLOAD --------
 
 // ensure uploads folder exists
 const uploadsDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir);
 
-// multer storage
 const storage = multer.diskStorage({
   destination: uploadsDir,
   filename: (req, file, cb) => {
@@ -76,17 +74,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// upload API
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-
-    if (email === "ishitakhandagale@gmail.com" && password === "12345") {
-        res.redirect('/welcome.html');
-    } else {
-        res.send("Invalid login details");
-    }
+// file upload route
+app.post("/upload", upload.single("file"), (req, res) => {
+  res.send("File uploaded successfully!");
 });
-
 
 // list files
 app.get("/files", (req, res) => {
@@ -102,9 +93,13 @@ app.get("/download/:name", (req, res) => {
   res.download(filePath);
 });
 
-// ------------------------
+// -------- root route --------
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
-const PORT = 5000;
+// -------- start server --------
+const PORT = process.env.PORT || 5000; // Render assigns dynamic port
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
