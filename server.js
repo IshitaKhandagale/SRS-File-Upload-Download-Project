@@ -56,7 +56,7 @@ app.post("/login", (req, res) => {
   }
 
   console.log("User logged in:", username);
-  res.redirect("/welcome.html");
+  res.redirect("/welcome.html"); // redirect to welcome page
 });
 
 // -------- FILE UPLOAD --------
@@ -99,7 +99,7 @@ app.get("/", (req, res) => {
 });
 
 // -------- start server --------
-const PORT = process.env.PORT || 5000; // Render assigns dynamic port
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
